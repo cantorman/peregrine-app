@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -75,13 +75,14 @@ WSGI_APPLICATION = 'peregrine.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
+with open(os.path.expanduser('~/db_password.txt')) as f:
+    db_password = f.read().strip()
 DATABASES = {
     'default': {
         'ENGINE':   'django.db.backends.mysql',
         'NAME':     'peregrine',
         'USER':     'peregrine',
-        'PASSWORD': 'peregrine',
+        'PASSWORD': db_password,
         'HOST':     'peregrine.cluster-cga6rvzkkowx.us-east-1.rds.amazonaws.com',
         'PORT':     '3306',
         'OPTIONS':  {
