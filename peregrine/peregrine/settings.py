@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-j%37^$yqmolyurs&l-p3lq82!4_ev@=xal5*249b4t+d##dmtc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['peregrine-prod-846049012.us-east-1.elb.amazonaws.com']
+ALLOWED_HOSTS = ['peregrine-prod-846049012.us-east-1.elb.amazonaws.com',
+                 '172.16.0.101',
+                 '172.16.1.195'
+                ]
 
 
 # Application definition
